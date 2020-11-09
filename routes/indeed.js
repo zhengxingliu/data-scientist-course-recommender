@@ -6,6 +6,5 @@ const router = express.Router();
 
 
 router.post('/search-indeed', indeedController.searchIndeed);
-
-
+router.post('/fetch-indeed', indeedController.fetchIndeed);
 module.exports = router;
