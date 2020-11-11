@@ -1,8 +1,6 @@
 const path = require('path');
 const express = require('express')
-
 const bodyParser = require('body-parser')
-
 
 const app = express()
 
@@ -15,9 +13,6 @@ app.set('views', 'views');
 
 const indeedRoutes = require('./routes/indeed')
 
-
-
-
 app.use((req, res, next) => {
   res.setHeader('Access-Control-Allow-Origin','*');  // allow CORS
   res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, PATCH, DELETE')
@@ -25,16 +20,12 @@ app.use((req, res, next) => {
   next()
 })
 
-
-
 app.use(indeedRoutes)
-
 
 app.get('/',(req, res, next) => {
   res.render('index', 
   // { clickHandler:readSearchInput() }
   )
 })
-
 
 app.listen(process.env.PORT || 8080)

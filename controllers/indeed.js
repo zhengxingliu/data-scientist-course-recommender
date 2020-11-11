@@ -3,8 +3,6 @@ const csv=require('csvtojson')
 
 exports.searchIndeed = (req, res, next) => {
   // console.log(req.query)
-
-
   const queryOptions = {
     host: `${req.query.country}.indeed.com`,
     query: req.query.jobtitle,
@@ -22,14 +20,17 @@ exports.searchIndeed = (req, res, next) => {
       console.log(result); // An array of Job objects
       res.json(JSON.stringify(result))
   });
-
 }
-
 
 exports.fetchIndeed = async (req, res, next) => {
   const csvFilePath='./data/indeed_data_scientist.csv'
   const jsonArray=await csv().fromFile(csvFilePath);
-  // console.log(jsonArray)
+  res.json(JSON.stringify(jsonArray))
+}
+
+exports.fetchCoursera = async (req, res, next) => {
+  const csvFilePath='./data/coursera_DS.csv'
+  const jsonArray=await csv().fromFile(csvFilePath);
   res.json(JSON.stringify(jsonArray))
 }
 
