@@ -23,9 +23,7 @@ app.use((req, res, next) => {
 app.use(indeedRoutes)
 
 app.get('/',(req, res, next) => {
-  res.render('index', 
-  // { clickHandler:readSearchInput() }
-  )
+  res.render('index')
 })
 
 app.listen(process.env.PORT || 8080)
