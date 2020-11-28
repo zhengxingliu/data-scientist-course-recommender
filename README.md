@@ -1,3 +1,7 @@
 # data-scientist-course-recommender
 
-backend
+backend repository
+
+
+
+see frontend [here](https://github.com/zhengxingliu/ds_course_recommender)
